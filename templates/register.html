@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body{
+margin: 100px;
+text-align: center;
+align: center;
+}
+
+input[type=text],[type=password],[type=number]{
+width: 40%;
+margin: 8px 0;
+padding: 7px 10px;
+display: inline-block;
+border:1px solid #ccc;
+box-sizing: border-box;
+}
+
+button{
+background-color:#4CAF50;
+width: 20%;
+padding: 12px 7px;
+margin:5px 0;
+border-radius: 10px;
+margin:auto;
+cursor:pointer;
+border:none;
+color:#ffffff;
+margin-left: 0px;
+}
+
+button:hover{
+opacity:0.8;
+}
+
+#fn,#ln,#un,#pwd,#em,#mn,#fm,#cy{
+font-family:'Lato', sans-serif;
+color: gray;
+}
+
+#em{
+margin-left:30px;
+}
+
+</style>
+
+<body bgcolor="#E6E6FA">
+
+<form action="{% url 'register' %}" method="post">{% csrf_token %}
+<h2>Registration Form</h2>
+
+<label for="r1" id="fn">Ismingiz :</label>
+<input type="text" name="i" id="r1"><br/>
+
+<label  for="r2" id="ln">Dokon nomi :</label>
+<input type="text" name="d" id="r2"><br/>
+
+<label  for="r3" id="un">Username :</label>
+<input type="text" name="l" id="r3"><br/>
+
+<label  for="r4" id="pwd">Password :</label>
+<input type="password" name="p" id="r4"><br/>
+
+<label  for="r5" id="em">Telefon raqam :</label>
+<input type="text" name="t" id="r5"><br/>
+
+
+
+<label for="r8" id="cy">Shahringizni tanlang:</label>
+
+<select name="m" id="r8">
+<option>Andijon</option>
+<option>Toshkent</option>
+<option>Buxoro</option>
+<option>Farg`ona</option>
+<option>Namangan</option>
+<option>Samarqand</option>
+<option>Sirdaryo</option>
+<option>Jizzax</option>
+<option>Qashqadaryo</option>
+<option>Nukus</option>
+</select><br/><br/>
+<div class="buttons">
+
+<button type="submit" value="Submit" id="button">Register</button>
+</div>
+
+</form>
+
+<script type="text/javascript">
+function save(){
+var user = document.getElementById("user").value;
+var pwd = document.getElementById("pwd").value;
+alert("username"+user+"password"+pwd);
+}
+</script>
+
+</body>
+</html>
